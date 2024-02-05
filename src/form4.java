@@ -51,19 +51,20 @@ public class form4 {
                         JOptionPane.showMessageDialog(panel4, "Fondos insuficientes");
                     } else {
                         // Llamar al método realizarRetiro de form2
-                        form2.realizarRetiro(monto);
+                        //form2.realizarRetiro(monto);
+                        System.out.println("Hola");
                         // Llamar al método actualizarSaldo de form3
                         form3.actualizarSaldo(form3.getSaldo() - monto);
                         JOptionPane.showMessageDialog(panel4, "Retiro exitoso. Saldo actualizado: $" + form3.getSaldo());
 
-                }catch (Exception ex){
+                }//catch (Exception ex){
                     // Manejar la excepción (contraseña incorrecta)
                     JOptionPane.showMessageDialog(panel4, "Valor incorrecto ");
                     $TextField.setText("");
-                }
+                //}
 
-            }
-        });
+            //}
+        //});
 
 
 
