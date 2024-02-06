@@ -17,6 +17,10 @@ public class form4 {
     private JButton enterButton;
     JPanel panel4;
     private JButton menuButton;
+    private double saldo = 200; // Ejemplo: Saldo inicial de 1000 dólares
+
+
+
 
     public form4() {
         // Agregar ActionListener para cada botón numérico
@@ -51,41 +55,22 @@ public class form4 {
                         JOptionPane.showMessageDialog(panel4, "Fondos insuficientes");
                     } else {
                         // Llamar al método realizarRetiro de form2
-                        //form2.realizarRetiro(monto);
-                        System.out.println("Hola");
-                        // Llamar al método actualizarSaldo de form3
-                        form3.actualizarSaldo(form3.getSaldo() - monto);
-                        JOptionPane.showMessageDialog(panel4, "Retiro exitoso. Saldo actualizado: $" + form3.getSaldo());
+                        form2.realizarRetiro(monto);
 
-                }//catch (Exception ex){
+                        // Llamar al método actualizarSaldo de form3
+                        form3 form3Instance = new form3();
+                        form3Instance.actualizarSaldo(form3Instance.getSaldo() - monto);
+                        //JOptionPane.showMessageDialog(panel4, "Retiro exitoso. Saldo actualizado: $" + form3Instance.getSaldo());
+                    }
+
+                } catch (Exception ex) {
                     // Manejar la excepción (contraseña incorrecta)
                     JOptionPane.showMessageDialog(panel4, "Valor incorrecto ");
                     $TextField.setText("");
-                //}
+                }
 
-            //}
-        //});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            }
+        });
 
         menuButton.addActionListener(new ActionListener() {
             @Override
@@ -101,6 +86,7 @@ public class form4 {
                 Main.pantalla2.setVisible(true);
             }
         });
+
 
     }
 }

@@ -10,6 +10,7 @@ public class form2 {
     private JRadioButton salirRadioButton;
 
     // Variable para almacenar el saldo actual
+    private static double saldo = 200; // Ejemplo: Saldo inicial de 1000 dólares
 
     public form2() {
         verSaldoRadioButton.addActionListener(new ActionListener() {
@@ -25,6 +26,8 @@ public class form2 {
                 Main.frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 Main.frame3.pack();
                 Main.frame3.setSize(850,420);
+                //Main.frame3.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); // Desactivar el botón de cerrar
+                //Main.frame3.setUndecorated(true); // Quitar los bordes y barras de título
                 Main.frame3.setVisible(true);
 
             }
@@ -80,5 +83,23 @@ public class form2 {
         });
 
     }
+    // Método ficticio en la clase form2 para realizar un retiro
+    public static void realizarRetiro(double monto) {
+        // Verificar si hay suficiente saldo para el retiro
+        if (monto > 0 && saldo >= monto) {
+            // Realizar el retiro
+            saldo -= monto;
+
+            //form3.actualizarSaldoDesdeRetiro(saldo);
+            // Mostrar un mensaje indicando el retiro exitoso
+            JOptionPane.showMessageDialog(null, "Retiro exitoso. Saldo actualizado: $" + saldo);
+
+        } else {
+            // Mostrar un mensaje indicando que los fondos son insuficientes
+            JOptionPane.showMessageDialog(null, "Saldo insuficiente para el retiro");
+        }
+        // Se puede agregar lógica adicional, como registrar la transacción en una base de datos, etc.
+    }
+
 
 }

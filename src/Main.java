@@ -11,7 +11,6 @@ public class Main {
     static JFrame frame4 = new JFrame("Retiro");
     static JFrame frame5 = new JFrame("Deposito");
 
-
     public static void main(String[] args) {
         pantalla1.setContentPane(new form1().panel1);
         pantalla1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
